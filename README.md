@@ -1,4 +1,4 @@
-# Lab-03. _Well formed class_ - `Pudelko`
+# Zadanie. _Well formed class_ - `Pudelko`
 
 * Krzysztof Molenda, ver. 0.2/2020
 
@@ -40,10 +40,9 @@ Twoim zadaniem jest zaimplementowanie klasy `Pudelko` spełniającej podane poni
 
    * Domyślnym pudełkiem jest prostopadłościan o wymiarach 10 cm × 10 cm × 10 cm.
 
-   * Tworzenie obiektu odbywa się na podstawie podania listy wartości długości boków (`a`, `b`, `c`) oraz jednostki miary. Wszystkie parametry konstruktora są opcjonalne.
+   * Tworzenie obiektu odbywa się na podstawie podania listy wartości długości boków (`a`, `b`, `c`) oraz jednostki miary. Domyślnie przyjmujemy, że wymiary pudełka podawane są w metrach.
       * Typ reprezentujący jednostki miary to `enum` o nazwie `UnitOfMeasure` definiujący składowe: `milimeter`, `centimeter`, `meter`.
-      * Jeśli podano mniej niż 3 wartości liczbowe, pozostałe przyjmuje się jako o wartości 10 cm, ale dla ustalonej jednostki miary.
-      * Jeśli nie podano jednostki miary, to przyjmujemy, że wymiary podawane są w metrach.
+      * Jeśli podano mniej niż 3 wartości liczbowe, pozostałe przyjmuje się jako 10 cm.
 
    * W przypadku próby utworzenia pudełka z którymkolwiek z parametrów niedodatnim, zgłaszany jest wyjątek `ArgumentOutOfRangeException`.
 
@@ -57,9 +56,9 @@ Twoim zadaniem jest zaimplementowanie klasy `Pudelko` spełniającej podane poni
 
      `«liczba» «jednostka» × «liczba» «jednostka» × «liczba» «jednostka»`
 
-   * znak rozdzielający wymiary, to znak mnożenia `×` (Unicode: U+00D7, _multiplication sign_, _times_)
-   * pomiędzy liczbami, nazwami jednostek miar i znakami `×` jest dokładnie jedna spacja
-   * domyślne formatowanie liczb (przesłonięcie `ToString()`) w metrach, z dokładnością 3. miejsc po przecinku
+   * znak rozdzielający wymiary, to znak mnożenia `×` (Unicode: U+00D7, multiplication sign, times)
+   * pomiędzy liczbami, wymiarami i znakami `×` jest dokładnie jedna spacja
+   * domyślne formatowanie liczb w metrach, z dokładnością 3 miejsc po przecinku
    * przeciążenie: funkcja `ToString(string format)` przyjmuje następujące kody formatów: `m`, `cm` oraz `mm`.
        * dla formatu `"m"` wartości podawane są ze stałą dokładnością 3. miejsc po przecinku
        * dla formatu `"cm"` wartości podawane są ze stałą dokładnością 1. miejsca po przecinku
@@ -102,14 +101,14 @@ Twoim zadaniem jest zaimplementowanie klasy `Pudelko` spełniającej podane poni
 13. Pamiętaj o zapewnieniu pełnej niezmienniczości obiektom klasy `Pudelko` oraz o zapieczętowaniu klasy.
 
 14. Utwórz testy jednostkowe (_unit tests_) dla:
-    * _properties_ `Objetosc` i `Pole`,
+    * _properties_ `Objetosc` i `Pole`
     * operatora łączenia pudełek,
     * operatora równości pudełek,
 
     przy kilku, reprezentatywnych zestawach danych.
 
 15. Metody rozszerzające
-    * W projekcie typu _Console App_ utwórz **metodę rozszerzającą** klasę `Pudelko` o nazwie `Kompresuj`, która zwraca pudełko sześcienne o takiej samej objętości, jak pudełko oryginalne.
+    * W projekcie _Console App_ utwórz **metodę rozszerzającą** klasę `Pudelko` o nazwie `Kompresuj`, która zwraca pudełko sześcienne o takiej samej objętości, jak pudełko oryginalne.
 
 16. Sortowanie pudełek
     * W funkcji `Main` programu głównego (aplikacja konsolowa) utwórz listę kliku różnych pudełek, używając różnych wariantów konstruktora.
@@ -123,7 +122,6 @@ Twoim zadaniem jest zaimplementowanie klasy `Pudelko` spełniającej podane poni
     * Wypisz listę posortowaną.
 
 W funkcji `Main` napisz kod potwierdzający poprawność wykonania poszczególnych implementacji.
-
 ___
 
 ## Ocena

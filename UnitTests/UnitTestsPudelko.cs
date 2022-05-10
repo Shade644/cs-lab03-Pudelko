@@ -447,16 +447,57 @@ namespace PudelkoUnitTests
 
 
         #region Pole, Objętość ===================================
-        // ToDo
+        [DataTestMethod]
+        [DataRow(9.5, 3.1, 2.5, 73.625)]
+        [DataRow(2.4, 1.1, 1.5, 3.96)]
+        [DataRow(7.1, 2.4, 8.8, 149.952)]
+        public void Volume_Equals(double a, double b, double c, double expected)
+        {
+            Pudelko p = new Pudelko(a, b, c);
+            Assert.AreEqual(expected, p.Objetosc);
+        }
 
+        [DataTestMethod]
+        [DataRow(9.5, 3.1, 2.5, 121.9)]
+        [DataRow(2.4, 1.1, 1.5, 15.78)]
+        [DataRow(7.1, 2.4, 8.8, 201.28)]
+        public void Surface_Area_Equals(double a, double b, double c, double expected)
+        {
+            Pudelko p = new Pudelko(a, b, c);
+            Assert.AreEqual(expected, p.Pole);
+        }
         #endregion
 
         #region Equals ===========================================
-        // ToDo
+        [DataTestMethod]
+        [DataRow(1.0, 1.0, 1.0, 1.0, 1.000001, 1.0, true)]
+        [DataRow(2.5, 3.1, 1.25, 3.1, 2.5, 1.25, true)]
+        [DataRow(9.5, 9.001, 9.0, 9.001, 9.0, 9.5, true)]
+        [DataRow(2.5, 3.1, 1.25, 3.1, 2.5, 1.2555, false)]
+        [DataRow(9.5, 9.001, 9.0, 9.0001, 9.0, 9.5, false)]
+        public void Equals_test(double a1, double b1, double c1, double a2, double b2, double c2, bool expected)
+        {
+            Pudelko pudelko1 = new Pudelko(a1, b1, c1);
+            Pudelko pudelko2 = new Pudelko(a2, b2, c2);
+
+            Assert.AreEqual(expected, pudelko1.Equals(pudelko2));
+        }
         #endregion
 
         #region Operators overloading ===========================
-        // ToDo
+        [DataTestMethod]
+        [DataRow(1.0, 1.0, 1.0, 1.0, 1.000001, 1.0, true)]
+        [DataRow(2.5, 3.1, 1.25, 3.1, 2.5, 1.25, true)]
+        [DataRow(9.5, 9.001, 9.0, 9.001, 9.0, 9.5, true)]
+        [DataRow(2.5, 3.1, 1.25, 3.1, 2.5, 1.2555, false)]
+        [DataRow(9.5, 9.001, 9.0, 9.0001, 9.0, 9.5, false)]
+        public void Equal_operator_test(double a1, double b1, double c1, double a2, double b2, double c2, bool expected)
+        {
+            Pudelko pudelko1 = new Pudelko(a1, b1, c1);
+            Pudelko pudelko2 = new Pudelko(a2, b2, c2);
+
+            Assert.AreEqual(expected, pudelko1 == pudelko2);
+        }
         #endregion
 
         #region Conversions =====================================
